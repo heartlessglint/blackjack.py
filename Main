@@ -2,7 +2,7 @@ class Deck:
   def __init__(self, numberOfPlayers):
     self.numberOfPlayers = numberOfPlayers
   
-  def createDeck(self):
+  def createDeck(self): # change so makes whole deck. Nested for statment using list of names?
     suits = ["Heart", "Spade", "Dimond", "Club"]
     fullCards = []
     for suit in suits:
@@ -14,11 +14,11 @@ class Deck:
           fullCards.append(i)
         else:
           fullCards.extend((f"{suit} - Jack", f"{suit} - Queen", f"{suit} - King"))
-    return fullCards #if done as print() not return works
+    return fullCards
+
 
 
 game = Deck("1")
 
-deck = game.createDeck
-print(deck)
+deck = game.createDeck()
 print(deck)
