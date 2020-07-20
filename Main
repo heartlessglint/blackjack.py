@@ -1,3 +1,4 @@
+#When determining winner will have to look at regex? and how to check for only numbers or face cards to determine winner. May be better to go back and look at changing list to dictonary?
 import Deck
 
 
