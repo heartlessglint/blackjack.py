@@ -1,3 +1,5 @@
+import random
+
 class Deck:
   def __init__(self, numberOfPlayers):
     self.numberOfPlayers = numberOfPlayers
@@ -16,9 +18,25 @@ class Deck:
           fullCards.extend((f"{suit} - Jack", f"{suit} - Queen", f"{suit} - King"))
     return fullCards
 
+  def shuffle(self, deck):
+    random.shuffle(deck)
+    return deck
+
+  def draw(self, deck):
+    card = deck.pop(0)
+    return card    
+
 
 
 game = Deck("1")
 
 deck = game.createDeck()
-print(deck)
+
+shuffled = game.shuffle(deck)
+
+print(shuffled)
+card = game.draw(shuffled)
+print(card)
+card = game.draw(shuffled)
+print(card)
+print(shuffled)
