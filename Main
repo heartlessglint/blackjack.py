@@ -58,5 +58,6 @@ choice = game.drawCardChoice(total)
 
 while choice:
   test = game.drawCardLoop(choice, test, shuffled)
+  print(test)
   total = game.totalInHand(test)
   choice = game.drawCardChoice(total) #not updating the total, so going on infante loop
