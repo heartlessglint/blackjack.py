@@ -33,7 +33,10 @@ class Computer(Deck):
     elif total == 16 and random.randint(1,101) > 50:
       print("Risky, but I'll take another")
       return True
-    elif 11 < total < 16 and random.randint(1,101) > 20:
+    elif total == 15 and random.randint(1,101) > 30:
+      print("There is a little risk, but I'm feeling lucky, I'll draw")
+      return True
+    elif 11 < total < 15 and random.randint(1,101) > 20:
       print("It's a small risk, so I'll do it")
       return True
     elif total <= 11:
@@ -44,8 +47,8 @@ class Computer(Deck):
       return False
 
   def drawCardLoop(self, choice, hand, currentDeck):#not sure how to add to the current hand
-    print(hand)
     if choice:
       card = self.draw(currentDeck)
       hand.append(card)
+    print(f"My new hand is {hand}")
     return hand
