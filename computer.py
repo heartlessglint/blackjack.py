@@ -31,3 +31,11 @@ class Computer(Deck):
     elif total == 16 and random.randint(1,101) > 50:
       print("Risky, but I'll take another")
       return True
+    elif 11 < total < 16 and random.randint(1,101) > 20:
+      print("It's a small risk, so I'll do it")
+      return True
+    elif total <= 11:
+      print("There is not risk, I will draw")
+      return True
+    else:
+      print("This is to catch an unseen error, if you see this \nI mucked up")
