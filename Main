@@ -2,16 +2,15 @@ from DeckOfCards import Deck
 from Computer import Computer
 import re
 
-
-game = Deck("1")
-
-deck = game.createDeck()
-
-shuffled = game.shuffle(deck)
-
 class Game(Computer, Deck):
   def __init__(self):
     self = self
+
+  def buildDeck():
+    game = Deck("1")
+    deck = game.createDeck()
+    shuffled = game.shuffle(deck)
+    return shuffled
 
   def totalInHand(self, computer):
     types = ("King", "Queen", "Jack", "Ace") #Ace can be one or 11, need to add in #somewhere for it to split as needed (show both options) Do after completed
@@ -43,22 +42,18 @@ class Game(Computer, Deck):
       total = self.totalInHand(test)
       choice = Computer.drawCardChoice(self, total)
 
-"""
-print(shuffled)
-card = game.draw(shuffled)
-print(card)
-card = game.draw(shuffled)
-print(card)
-print(shuffled)
-"""
-def computerPlay():
-  computer = Computer("1")
-  test = computer.start(shuffled)
-  print(f"The computers opening hand is {test}")
-  game = Game()
-  total = game.totalInHand(test)
-  game.checkIfBust(total)
-  choice = game.drawCardChoice(total)
-  game.loop(choice, test, shuffled)
+  def computerPlay(self):
+    shuffled = Game.buildDeck()
+    computer = Computer("1")
+    test = computer.start(shuffled)
+    print(f"The computers opening hand is {test}")
+    game = Game()
+    total = game.totalInHand(test)
+    game.checkIfBust(total)
+    choice = game.drawCardChoice(total)
+    game.loop(choice, test, shuffled)
 
-computerPlay()
+
+
+
+Game().computerPlay()
