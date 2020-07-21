@@ -1,16 +1,46 @@
 #When determining winner will have to look at regex? and how to check for only numbers or face cards to determine winner. May be better to go back and look at changing list to dictonary?
-import Deck
+from DeckofCards import Deck
+from Computer import Computer
+import re
 
-
-game = Deck.Deck("1")
+game = Deck("1")
 
 deck = game.createDeck()
 
 shuffled = game.shuffle(deck)
 
+class Game(Computer, Deck):
+  def __init__(self):
+    self = self
+
+  def checkWinner(self, computer):
+    types = ("King", "Queen", "Jack", "Ace") #Ace can be one or 11, need to add in #somewhere for it to split as needed (show both options)
+    stringOfHand = " ".join(computer)
+    numbersInHand = re.findall(r'(\d+)', stringOfHand)
+    for items in types:
+      X = re.findall(items, stringOfHand)
+      numbersInHand.extend(X)
+    for pos, number in enumerate(numbersInHand):
+      if number in types:
+        numbersInHand[pos] = 10
+    totalHand = 0
+    for items in numbersInHand:
+      totalHand = totalHand + int(items)
+    return totalHand
+  
+
+"""
 print(shuffled)
 card = game.draw(shuffled)
 print(card)
 card = game.draw(shuffled)
 print(card)
 print(shuffled)
+"""
+computer = Computer("1")
+test = computer.start(shuffled)
+print(test)
+
+game = Game()
+
+print(game.checkWinner(test))
