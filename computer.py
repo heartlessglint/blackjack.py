@@ -1,4 +1,5 @@
 from DeckOfCards import Deck
+import random
 
 class Computer(Deck):
   def __init__(self, number):
@@ -12,7 +13,7 @@ class Computer(Deck):
       hand.append(card)
     return hand
 
-  def drawCard(self, total):
+  def drawCardChoice(self, total):
     if total == 21:
       print("I have 21, I will not draw")
       return False
@@ -39,3 +40,9 @@ class Computer(Deck):
       return True
     else:
       print("This is to catch an unseen error, if you see this \nI mucked up")
+
+  def drawCardLoop(self, choice, hand):
+    if choice:
+      card = self.draw(deck)
+      hand.append(card)
+    print(hand)
