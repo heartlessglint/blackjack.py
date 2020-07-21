@@ -43,6 +43,6 @@ class Computer(Deck):
 
   def drawCardLoop(self, choice, hand):
     if choice:
-      card = self.draw(deck)
+      card = self.draw(hand)
       hand.append(card)
     print(hand)
