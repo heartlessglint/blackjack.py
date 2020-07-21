@@ -24,4 +24,4 @@ class Deck:
 
   def draw(self, deck):
     card = deck.pop(0)
-    return card    
+    return card
