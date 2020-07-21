@@ -29,12 +29,13 @@ class Game(Computer, Deck):
     return totalHand
 
   def checkIfBust(self, total):
+    print(f'The dealer says:\n"Your total is {total}"')
     if total == 21:
-      print("You have 21 well done")
+      print('"You have 21 well done"')
     elif total < 21:
-      print("You can draw another card if you want")
+      print('"You can draw another card if you want"')
     else:
-      print("You have gone bust")
+      print('"You have gone bust"')
   
 
 """
@@ -47,8 +48,7 @@ print(shuffled)
 """
 computer = Computer("1")
 test = computer.start(shuffled)
-print(f"The computers opening hand is{test}")
-
+print(f"The computers opening hand is {test}")
 game = Game()
 total = game.totalInHand(test)
 game.checkIfBust(total)
