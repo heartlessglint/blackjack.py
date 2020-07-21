@@ -47,17 +47,14 @@ print(shuffled)
 """
 computer = Computer("1")
 test = computer.start(shuffled)
-print(test)
+print(f"The computers opening hand is{test}")
 
 game = Game()
-
 total = game.totalInHand(test)
-print(total)
 game.checkIfBust(total)
 choice = game.drawCardChoice(total)
 
 while choice:
   test = game.drawCardLoop(choice, test, shuffled)
-  print(test)
   total = game.totalInHand(test)
   choice = game.drawCardChoice(total) #not updating the total, so going on infante loop
