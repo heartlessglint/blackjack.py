@@ -2,6 +2,7 @@ from DeckOfCards import Deck
 from Computer import Computer
 import re
 
+
 game = Deck("1")
 
 deck = game.createDeck()
@@ -12,7 +13,7 @@ class Game(Computer, Deck):
   def __init__(self):
     self = self
 
-  def checkWinner(self, computer):
+  def totalInHand(self, computer):
     types = ("King", "Queen", "Jack", "Ace") #Ace can be one or 11, need to add in #somewhere for it to split as needed (show both options) Do after completed
     stringOfHand = " ".join(computer)
     numbersInHand = re.findall(r'(\d+)', stringOfHand)
@@ -26,6 +27,14 @@ class Game(Computer, Deck):
     for items in numbersInHand:
       totalHand = totalHand + int(items)
     return totalHand
+
+  def checkIfBust(self, total):
+    if total == 21:
+      print("You have 21 well done")
+    elif total < 21:
+      print("You can draw another card if you want")
+    else:
+      print("You have gone bust")
   
 
 """
@@ -42,4 +51,9 @@ print(test)
 
 game = Game()
 
-print(game.checkWinner(test))
+total = game.totalInHand(test)
+print(total)
+game.checkIfBust(total)
+choice = game.drawCardChoice(total)
+
+game.drawCardLoop(choice, game)#100% not working yet
