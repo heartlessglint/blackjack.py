@@ -14,6 +14,7 @@ class Computer(Deck):
     return hand
 
   def drawCardChoice(self, total):
+    print(f'My current total is {total}')
     if total == 21:
       print("I have 21, I will not draw")
       return False
@@ -39,13 +40,12 @@ class Computer(Deck):
       print("There is not risk, I will draw")
       return True
     else:
-      print("I will not draw")
+      print(f"I will not draw.")
       return False
 
   def drawCardLoop(self, choice, hand, currentDeck):#not sure how to add to the current hand
     print(hand)
     if choice:
       card = self.draw(currentDeck)
-      print(card)
       hand.append(card)
-    print(hand)
+    return hand
