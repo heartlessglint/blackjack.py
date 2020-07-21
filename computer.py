@@ -46,7 +46,7 @@ class Computer(Deck):
       print(f"I will not draw.")
       return False
 
-  def drawCardLoop(self, choice, hand, currentDeck):#not sure how to add to the current hand
+  def drawCardLoop(self, choice, hand, currentDeck):
     if choice:
       card = self.draw(currentDeck)
       hand.append(card)
