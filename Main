@@ -1,4 +1,3 @@
-#When determining winner will have to look at regex? and how to check for only numbers or face cards to determine winner. May be better to go back and look at changing list to dictonary?
 from DeckOfCards import Deck
 from Computer import Computer
 import re
@@ -14,7 +13,7 @@ class Game(Computer, Deck):
     self = self
 
   def checkWinner(self, computer):
-    types = ("King", "Queen", "Jack", "Ace") #Ace can be one or 11, need to add in #somewhere for it to split as needed (show both options)
+    types = ("King", "Queen", "Jack", "Ace") #Ace can be one or 11, need to add in #somewhere for it to split as needed (show both options) Do after completed
     stringOfHand = " ".join(computer)
     numbersInHand = re.findall(r'(\d+)', stringOfHand)
     for items in types:
