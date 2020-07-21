@@ -37,6 +37,11 @@ class Game(Computer, Deck):
     else:
       print('"You have gone bust"')
   
+  def loop(self, choice, test, shuffled):
+    while choice:
+      test = Computer.drawCardLoop(self, choice, test, shuffled)
+      total = self.totalInHand(test)
+      choice = Computer.drawCardChoice(self, total)
 
 """
 print(shuffled)
@@ -46,15 +51,14 @@ card = game.draw(shuffled)
 print(card)
 print(shuffled)
 """
-computer = Computer("1")
-test = computer.start(shuffled)
-print(f"The computers opening hand is {test}")
-game = Game()
-total = game.totalInHand(test)
-game.checkIfBust(total)
-choice = game.drawCardChoice(total)
-
-while choice:
-  test = game.drawCardLoop(choice, test, shuffled)
+def computerPlay():
+  computer = Computer("1")
+  test = computer.start(shuffled)
+  print(f"The computers opening hand is {test}")
+  game = Game()
   total = game.totalInHand(test)
-  choice = game.drawCardChoice(total) #not updating the total, so going on infante loop
+  game.checkIfBust(total)
+  choice = game.drawCardChoice(total)
+  game.loop(choice, test, shuffled)
+
+computerPlay()
