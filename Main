@@ -55,5 +55,6 @@ total = game.totalInHand(test)
 print(total)
 game.checkIfBust(total)
 choice = game.drawCardChoice(total)
+print(choice)
 
-game.drawCardLoop(choice, game)#100% not working yet
+game.drawCardLoop(choice, test, shuffled)
