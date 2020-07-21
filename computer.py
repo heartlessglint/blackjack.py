@@ -39,10 +39,13 @@ class Computer(Deck):
       print("There is not risk, I will draw")
       return True
     else:
-      print("This is to catch an unseen error, if you see this \nI mucked up")
+      print("I will not draw")
+      return False
 
-  def drawCardLoop(self, choice, hand):
+  def drawCardLoop(self, choice, hand, currentDeck):#not sure how to add to the current hand
+    print(hand)
     if choice:
-      card = self.draw(hand)
+      card = self.draw(currentDeck)
+      print(card)
       hand.append(card)
     print(hand)
