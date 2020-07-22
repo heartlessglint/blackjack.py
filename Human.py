@@ -12,7 +12,7 @@ class Player(Deck):
     return hand
   
   def validInput(self, choice):
-    while choice != "y" or choice != "yes" or choice != "n" or choice != "no"
+    while choice != "y" or choice != "yes" or choice != "n" or choice != "no":
       choice = input("Please choose Y/N: ")
   
   def drawCard(self, hand, total):
