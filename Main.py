@@ -1,9 +1,11 @@
+#stop working on, look at inheritance in more detail and how to get a class to use #instances of methods of other class without inheritance
+
 from DeckOfCards import Deck
 from Computer import Computer
 from Human import Player
 import re
 
-class Game(Computer, Deck, Player):
+class Game(Computer, Player, Deck):
   def __init__(self):
     pass
 
@@ -59,4 +61,7 @@ class Game(Computer, Deck, Player):
 
 Game().computerPlay()
 
-#shuffled = Game.buildDeck()
+shuffled = Game.buildDeck()
+print(shuffled)
+
+hand = Player.start(shuffled)
