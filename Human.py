@@ -2,7 +2,7 @@ from DeckOfCards import Deck
 
 class Player(Deck):
   def __init__(self):
-    self.self = self
+    pass
   
   def start(self, deck):
     hand = []
