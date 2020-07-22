@@ -11,7 +11,7 @@ class Player(Deck):
       hand.append(card)
     return hand
   
-  def validInput(self, choice);
+  def validInput(self, choice):
     while choice != "y" or choice != "yes" or choice != "n" or choice != "no"
       choice = input("Please choose Y/N: ")
   
