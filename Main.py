@@ -4,7 +4,7 @@ import re
 
 class Game(Computer, Deck):
   def __init__(self):
-    self = self
+    pass
 
   def buildDeck():
     game = Deck("1")
