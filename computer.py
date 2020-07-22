@@ -43,7 +43,7 @@ class Computer(Deck):
       print("There is not risk, I will draw")
       return True
     else:
-      print(f"I will not draw.")
+      print("I will not draw.")
       return False
 
   def drawCardLoop(self, choice, hand, currentDeck):
