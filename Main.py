@@ -1,8 +1,9 @@
 from DeckOfCards import Deck
 from Computer import Computer
+from Human import Player
 import re
 
-class Game(Computer, Deck):
+class Game(Computer, Deck, Player):
   def __init__(self):
     pass
 
@@ -57,3 +58,5 @@ class Game(Computer, Deck):
 
 
 Game().computerPlay()
+
+#shuffled = Game.buildDeck()
